@@ -39,9 +39,9 @@ const getYear = () => {
     let currentYear = new Date().getFullYear();
     console.log(year)
     if (year > currentYear) {
-        monthLabel.classList.add('error');
-        monthInput.classList.add('errorInput');
-        monthDiv.innerHTML += `<p class="error">Must be a valid year</p>`
+        yearLabel.classList.add('error');
+        yearInput.classList.add('errorInput');
+        yearDiv.innerHTML += `<p class="error">Must be a valid year</p>`
         console.log('error');
     }
 }
