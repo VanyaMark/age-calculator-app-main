@@ -9,9 +9,9 @@ let monthLabel =document.getElementById("monthLabel");
 let monthDiv = document.getElementById("monthDiv");
 
 
-let month = monthInput.value;
 
-let year = yearInput.value;
+
+
 
 const getDay = () => {
     let day = dayInput.value;
@@ -25,6 +25,7 @@ const getDay = () => {
 }
 
 const getMonth = () => {
+    let month = monthInput.value;
     if (month<1 || month>12) {
         monthLabel.classList.add('error');
         monthInput.classList.add('errorInput');
@@ -33,7 +34,19 @@ const getMonth = () => {
     }
 }
 
+const getYear = () => {
+    let year = yearInput.value;
+    let currentYear = new Date().getFullYear();
+    console.log(year)
+    if (year > currentYear) {
+        monthLabel.classList.add('error');
+        monthInput.classList.add('errorInput');
+        monthDiv.innerHTML += `<p class="error">Must be a valid year</p>`
+        console.log('error');
+    }
+}
+
 
 dayInput.addEventListener('input', getDay)
 monthInput.addEventListener('input', getMonth)
-yearInput.addEventListener('input', ()=>{})
+yearInput.addEventListener('input', getYear)
