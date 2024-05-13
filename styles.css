@@ -1,0 +1,11 @@
+body {
+    background-color: lightgray;
+}
+
+.error {
+    color: red;
+}
+
+.errorInput {
+    border: 1px solid red;
+}
